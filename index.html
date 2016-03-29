@@ -3,70 +3,13 @@
 <html>
 
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="node_modules/@polymer/polymer/node_modules/webcomponents.js/webcomponents-lite.min.js"></script>
+
+        <link rel="import" href="components/app/app.component.html">
     </head>
 
     <body>
-        <div class="flex-row flex-center">
-            <div class="flex-col">
-                <div class="flex-row flex-center">
-                    <h2>Practice Problem Examples</h2>
-                </div>
-                <iframe class="problem-frame" src="https://resplendent-fire-9351.firebaseapp.com/view-problem/3" frameborder="0"></iframe>
-                <iframe class="problem-frame" src="https://resplendent-fire-9351.firebaseapp.com/view-problem/4" frameborder="0"></iframe>
-                <iframe class="problem-frame" src="https://resplendent-fire-9351.firebaseapp.com/view-problem/-KDFcLk77AyRDEnvKp4C" frameborder="0"></iframe>
-                <iframe class="problem-frame" src="https://resplendent-fire-9351.firebaseapp.com/view-problem/1" frameborder="0"></iframe>
-                <iframe class="problem-frame" src="https://resplendent-fire-9351.firebaseapp.com/view-problem/2" frameborder="0"></iframe>
-                <iframe class="problem-frame" src="https://resplendent-fire-9351.firebaseapp.com/view-problem/-K9E1T96P4RIMpBZrZBq" frameborder="0"></iframe>
-            </div>
-        </div>
-
-        <style>
-            .problem-frame {
-                width: 50vw;
-                height: 500px;
-                box-shadow: 0px 0px 5px grey;
-                margin-top: 25px;
-            }
-
-            @media (max-width: 767px) {
-                .problem-frame {
-                    width: 95vw;
-                }
-            }
-
-            .flex-row {
-                display: flex;
-                flex-direction: row;
-            }
-
-            .flex-col {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .flex-center {
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
-
-        <script>
-            onmessage = function(e) {
-                const originDomain = e.origin;
-                if (originDomain !== 'https://resplendent-fire-9351.firebaseapp.com') {
-                    return;
-                }
-
-                if (e.data.correct) {
-                    alert('Correct!');
-                }
-                else {
-                    alert('Incorrect!');
-                }
-
-                console.log(e.data);
-            };
-        </script>
+        <sm-app></sm-app>
     </body>
+
 </html>
