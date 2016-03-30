@@ -3,7 +3,27 @@
 
 <dom-module id="sm-hero">
     <template>
-        This is the hero area
+        <div class="flex-col flex-center" style="margin-bottom: 25px">
+            <p>This is where we will introduce Solutia Maxima. The video below will probably be some kind of engaging tutorial/introduction to Solutia Maxima</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ol1kRrIRvZk" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <style>
+            .flex-row {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .flex-col {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .flex-center {
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
     </template>
 
     <script src="../../dist/hero.component.js"></script>
