@@ -14,15 +14,20 @@
         <script>
             onmessage = function(e) {
                 const originDomain = e.origin;
+
                 if (originDomain !== 'https://resplendent-fire-9351.firebaseapp.com') {
                     return;
                 }
-                if (e.data.correct) {
-                    alert('Correct!');
+
+                if (e.data.type === 'ANSWER_ATTEMPT') {
+                    if (e.data.correct) {
+                        alert('Correct!');
+                    }
+                    else {
+                        alert('Incorrect!');
+                    }
                 }
-                else {
-                    alert('Incorrect!');
-                }
+
                 console.log(e.data);
             };
         </script>
