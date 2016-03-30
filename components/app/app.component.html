@@ -1,12 +1,14 @@
-<link rel="import" href="../../node_modules/@polymer/polymer/polymer.html">
+<!--<link rel="import" href="../../node_modules/@polymer/polymer/polymer.html">-->
+<link rel="import" href="../../lib/bower_components/polymer/polymer.html">
 
+<link rel="import" href="../hero/hero.component.html">
 <link rel="import" href="../tabs/tabs.component.html">
 
 <dom-module id="sm-app">
     <template>
-        I am a dom element<br>
+        <sm-hero></sm-hero>
         <sm-tabs></sm-tabs>
     </template>
 
-    <script src="app.component.js"></script>
+    <script src="../../dist/app.component.js"></script>
 </dom-module>

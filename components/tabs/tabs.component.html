@@ -1,9 +1,27 @@
-<link rel="import" href="../../node_modules/@polymer/polymer/polymer.html">
+<!--<link rel="import" href="../../node_modules/@polymer/polymer/polymer.html">-->
+<link rel="import" href="../../lib/bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../lib/bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../lib/bower_components/iron-pages/iron-pages.html">
+
+<link rel="import" href="../problem-index/problem-index.component.html">
+<link rel="import" href="../tutorial/tutorial.component.html">
+<link rel="import" href="../create-problem/create-problem.component.html">
 
 <dom-module id="sm-tabs">
     <template>
-        I am tabs
+        <paper-tabs selected="{{selectedTab}}">
+            <paper-tab>PROBLEMS</paper-tab>
+            <paper-tab>TUTORIAL</paper-tab>
+            <paper-tab>CREATE</paper-tab>
+        </paper-tabs>
+
+        <iron-pages selected="{{selectedTab}}">
+            <sm-problem-index></sm-problem-index>
+            <sm-tutorial></sm-tutorial>
+            <sm-create-problem></sm-create-problem>
+        </iron-pages>
     </template>
 
-    <script src="tabs.component.js"></script>
+    <script src="../../dist/tabs.component.js"></script>
 </dom-module>
