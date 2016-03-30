@@ -1,5 +1,9 @@
 const is = 'sm-problem-index';
 
+const ready = function() {
+};
+
 Polymer({
-    is
+    is,
+    ready
 });

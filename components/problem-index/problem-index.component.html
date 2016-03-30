@@ -1,9 +1,41 @@
 <!--<link rel="import" href="../../node_modules/@polymer/polymer/polymer.html">-->
 <link rel="import" href="../../lib/bower_components/polymer/polymer.html">
 
+<link rel="import" href="../../lib/bower_components/firebase-element/firebase-collection.html">
+
 <dom-module id="sm-problem-index">
     <template>
-        sm-problem-index
+        <firebase-collection location="https://resplendent-fire-9351.firebaseio.com/problems" order-by-key="true" data="{{problems}}"></firebase-collection>
+
+        <div class="flex-col flex-center">
+            <template is="dom-repeat" items="{{problems}}">
+                <iframe class="problem-frame" src="https://resplendent-fire-9351.firebaseapp.com/view-problem/{{item.__firebaseKey__}}" frameborder="0"></iframe>
+            </template>
+        </div>
+
+        <style>
+            .problem-frame {
+                width: 50vw;
+                height: 500px;
+                box-shadow: 0px 0px 5px grey;
+                margin-top: 25px;
+            }
+
+            .flex-row {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .flex-col {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .flex-center {
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
     </template>
 
     <script src="../../dist/problem-index.component.js"></script>

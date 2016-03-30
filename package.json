@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "The main public repository of all Solutia Maxima problems",
   "dependencies": {
-    "@polymer/polymer": "1.2.5-npm-test.2",
     "redux": "3.3.1"
   },
   "devDependencies": {

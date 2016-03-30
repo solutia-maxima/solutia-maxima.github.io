@@ -3,13 +3,29 @@
 <html>
 
     <head>
-        <script src="node_modules/@polymer/polymer/node_modules/webcomponents.js/webcomponents-lite.min.js"></script>
+        <script src="lib/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
         <link rel="import" href="components/app/app.component.html">
     </head>
 
     <body>
         <sm-app>Loading...</sm-app>
+
+        <script>
+            onmessage = function(e) {
+                const originDomain = e.origin;
+                if (originDomain !== 'https://resplendent-fire-9351.firebaseapp.com') {
+                    return;
+                }
+                if (e.data.correct) {
+                    alert('Correct!');
+                }
+                else {
+                    alert('Incorrect!');
+                }
+                console.log(e.data);
+            };
+        </script>
     </body>
 
 </html>
