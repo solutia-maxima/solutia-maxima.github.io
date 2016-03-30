@@ -48,9 +48,19 @@
 
 	var is = 'sm-problem-index';
 	var ready = function ready() {};
+	var sort = function sort(a, b) {
+	    if (a.timestamp > b.timestamp) {
+	        return -1;
+	    }
+	    if (a.timestamp < b.timestamp) {
+	        return 1;
+	    }
+	    return 0;
+	};
 	Polymer({
 	    is: is,
-	    ready: ready
+	    ready: ready,
+	    sort: sort
 	});
 
 /***/ }

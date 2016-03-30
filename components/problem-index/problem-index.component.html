@@ -5,10 +5,10 @@
 
 <dom-module id="sm-problem-index">
     <template>
-        <firebase-collection location="https://resplendent-fire-9351.firebaseio.com/problems" order-by-key="true" data="{{problems}}"></firebase-collection>
+        <firebase-collection location="https://resplendent-fire-9351.firebaseio.com/problems" data="{{problems}}"></firebase-collection>
 
         <div class="flex-col flex-center">
-            <template is="dom-repeat" items="{{problems}}">
+            <template is="dom-repeat" items="{{problems}}" sort="sort">
                 <iframe class="problem-frame" src="https://resplendent-fire-9351.firebaseapp.com/view-problem/{{item.__firebaseKey__}}" frameborder="0"></iframe>
             </template>
         </div>
