@@ -8,6 +8,13 @@ import {rootReducer} from '../redux/reducers.ts';
 
     const store = createStore(rootReducer);
 
+    const properties = {
+        action: {
+            type: Object,
+            observer: 'actionChanged'
+        }
+    };
+
     const ready = function() {
         store.subscribe(() => {
             this.fire('stateChange', {
@@ -16,18 +23,14 @@ import {rootReducer} from '../redux/reducers.ts';
         });
     };
 
-    const listeners = {
-        'dispatch': 'handleDispatch'
-    };
-
-    const handleDispatch = function(e) {
-        store.dispatch(e.detail.action);
+    const actionChanged = function(newValue, oldValue) {
+        store.dispatch(newValue);
     };
 
     Polymer({
         is,
+        properties,
         ready,
-        listeners,
-        handleDispatch
+        actionChanged
     });
 })();

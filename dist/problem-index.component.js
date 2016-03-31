@@ -52,6 +52,7 @@
 	    'stateChange': 'mapStateToThis'
 	};
 	var mapStateToThis = function mapStateToThis(e) {
+	    e.stopPropagation();
 	    console.log('problem index component');
 	    console.log(e.detail.state);
 	};

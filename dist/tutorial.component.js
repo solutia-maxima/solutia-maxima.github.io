@@ -51,6 +51,7 @@
 	    'stateChange': 'mapStateToThis'
 	};
 	var mapStateToThis = function mapStateToThis(e) {
+	    e.stopPropagation();
 	    console.log('tutorial component');
 	    console.log(e.detail.state);
 	};

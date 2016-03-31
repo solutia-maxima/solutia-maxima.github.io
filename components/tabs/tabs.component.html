@@ -10,8 +10,8 @@
 
 <dom-module id="sm-tabs">
     <template>
-        <sm-redux-store></sm-redux-store>
-        
+        <sm-redux-store action={{action}}></sm-redux-store>
+
         <button on-click="handleDispatchClick">Dispatch action</button>
 
         <paper-tabs selected="{{selectedTab}}">

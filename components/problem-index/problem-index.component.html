@@ -6,7 +6,7 @@
 
 <dom-module id="sm-problem-index">
     <template>
-        <sm-redux-store></sm-redux-store>
+        <sm-redux-store action="{{action}}"></sm-redux-store>
 
         <firebase-collection location="https://resplendent-fire-9351.firebaseio.com/problems" data="{{problems}}"></firebase-collection>
 

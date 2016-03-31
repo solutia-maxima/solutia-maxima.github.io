@@ -53,6 +53,12 @@
 	(function () {
 	    var is = 'sm-redux-store';
 	    var store = (0, _reduxMin.createStore)(_reducers.rootReducer);
+	    var properties = {
+	        action: {
+	            type: Object,
+	            observer: 'actionChanged'
+	        }
+	    };
 	    var ready = function ready() {
 	        var _this = this;
 
@@ -62,17 +68,14 @@
 	            });
 	        });
 	    };
-	    var listeners = {
-	        'dispatch': 'handleDispatch'
-	    };
-	    var handleDispatch = function handleDispatch(e) {
-	        store.dispatch(e.detail.action);
+	    var actionChanged = function actionChanged(newValue, oldValue) {
+	        store.dispatch(newValue);
 	    };
 	    Polymer({
 	        is: is,
+	        properties: properties,
 	        ready: ready,
-	        listeners: listeners,
-	        handleDispatch: handleDispatch
+	        actionChanged: actionChanged
 	    });
 	})();
 

@@ -9,17 +9,16 @@ const listeners = {
 };
 
 const mapStateToThis = function(e) {
+    e.stopPropagation();
     console.log('tabs component');
     console.log(e.detail.state);
 };
 
 const handleDispatchClick = function(e) {
-    this.fire('dispatch', {
-        action: {
-            type: 'CHANGE_TEMP',
-            newTemp: 'goodbye'
-        }
-    });
+    this.action = {
+        type: 'CHANGE_TEMP',
+        newTemp: 'goodbye'
+    };
 };
 
 Polymer({

@@ -5,6 +5,7 @@ const listeners = {
 };
 
 const mapStateToThis = function(e) {
+    e.stopPropagation();
     console.log('hero component');
     console.log(e.detail.state);
 };

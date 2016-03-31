@@ -8,6 +8,7 @@ const listeners = {
 };
 
 const mapStateToThis = function(e) {
+    e.stopPropagation();
     console.log('problem index component');
     console.log(e.detail.state);
 };
