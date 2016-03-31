@@ -59,9 +59,11 @@
 	    console.log(e.detail.state);
 	};
 	var handleDispatchClick = function handleDispatchClick(e) {
+	    var newTemp = this.$.tempInput.value;
+	    console.log(newTemp);
 	    this.action = {
 	        type: 'CHANGE_TEMP',
-	        newTemp: 'goodbye'
+	        newTemp: newTemp
 	    };
 	};
 	Polymer({

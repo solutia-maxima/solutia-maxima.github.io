@@ -15,9 +15,13 @@ const mapStateToThis = function(e) {
 };
 
 const handleDispatchClick = function(e) {
+
+    const newTemp = this.$.tempInput.value;
+    console.log(newTemp);
+
     this.action = {
         type: 'CHANGE_TEMP',
-        newTemp: 'goodbye'
+        newTemp
     };
 };
 
