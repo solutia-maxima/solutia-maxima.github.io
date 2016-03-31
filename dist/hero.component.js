@@ -47,8 +47,17 @@
 	'use strict';
 
 	var is = 'sm-hero';
+	var listeners = {
+	    'stateChange': 'mapStateToThis'
+	};
+	var mapStateToThis = function mapStateToThis(e) {
+	    console.log('hero component');
+	    console.log(e.detail.state);
+	};
 	Polymer({
-	    is: is
+	    is: is,
+	    listeners: listeners,
+	    mapStateToThis: mapStateToThis
 	});
 
 /***/ }

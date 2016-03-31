@@ -49,11 +49,28 @@
 	var is = 'sm-tabs';
 	var ready = function ready() {
 	    this.selectedTab = 0;
-	    console.log(this.store);
+	};
+	var listeners = {
+	    'stateChange': 'mapStateToThis'
+	};
+	var mapStateToThis = function mapStateToThis(e) {
+	    console.log('tabs component');
+	    console.log(e.detail.state);
+	};
+	var handleDispatchClick = function handleDispatchClick(e) {
+	    this.fire('dispatch', {
+	        action: {
+	            type: 'CHANGE_TEMP',
+	            newTemp: 'goodbye'
+	        }
+	    });
 	};
 	Polymer({
 	    is: is,
-	    ready: ready
+	    ready: ready,
+	    listeners: listeners,
+	    mapStateToThis: mapStateToThis,
+	    handleDispatchClick: handleDispatchClick
 	});
 
 /***/ }

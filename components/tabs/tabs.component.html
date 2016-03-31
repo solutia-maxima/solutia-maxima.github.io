@@ -4,8 +4,6 @@
 <link rel="import" href="../../lib/bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../../lib/bower_components/iron-pages/iron-pages.html">
 
-<link rel="import" href="../../redux/redux.component.html">
-
 <link rel="import" href="../problem-index/problem-index.component.html">
 <link rel="import" href="../tutorial/tutorial.component.html">
 <link rel="import" href="../create-problem/create-problem.component.html">
@@ -13,8 +11,10 @@
 <dom-module id="sm-tabs">
     <template>
         <sm-redux-store></sm-redux-store>
+        
+        <button on-click="handleDispatchClick">Dispatch action</button>
 
-        <!--<paper-tabs selected="{{selectedTab}}">
+        <paper-tabs selected="{{selectedTab}}">
             <paper-tab>PROBLEMS</paper-tab>
             <paper-tab>TUTORIAL</paper-tab>
             <paper-tab>CREATE</paper-tab>
@@ -24,7 +24,7 @@
             <sm-problem-index></sm-problem-index>
             <sm-tutorial></sm-tutorial>
             <sm-create-problem></sm-create-problem>
-        </iron-pages>-->
+        </iron-pages>
     </template>
 
     <script src="../../dist/tabs.component.js"></script>

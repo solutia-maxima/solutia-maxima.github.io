@@ -48,6 +48,13 @@
 
 	var is = 'sm-problem-index';
 	var ready = function ready() {};
+	var listeners = {
+	    'stateChange': 'mapStateToThis'
+	};
+	var mapStateToThis = function mapStateToThis(e) {
+	    console.log('problem index component');
+	    console.log(e.detail.state);
+	};
 	var sort = function sort(a, b) {
 	    if (a.timestamp > b.timestamp) {
 	        return -1;
@@ -60,7 +67,9 @@
 	Polymer({
 	    is: is,
 	    ready: ready,
-	    sort: sort
+	    sort: sort,
+	    listeners: listeners,
+	    mapStateToThis: mapStateToThis
 	});
 
 /***/ }

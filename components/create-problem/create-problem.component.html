@@ -1,8 +1,12 @@
 <!--<link rel="import" href="../../node_modules/@polymer/polymer/polymer.html">-->
 <link rel="import" href="../../lib/bower_components/polymer/polymer.html">
 
+<link rel="import" href="../../redux/redux.component.html">
+
 <dom-module id="sm-create-problem">
     <template>
+        <sm-redux-store></sm-redux-store>
+
         <div class="flex-row flex-center">
             <iframe class="problem-frame" src="https://resplendent-fire-9351.firebaseapp.com/edit-problem" frameborder="0"></iframe>
         </div>

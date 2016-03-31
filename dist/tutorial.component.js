@@ -47,8 +47,17 @@
 	'use strict';
 
 	var is = 'sm-tutorial';
+	var listeners = {
+	    'stateChange': 'mapStateToThis'
+	};
+	var mapStateToThis = function mapStateToThis(e) {
+	    console.log('tutorial component');
+	    console.log(e.detail.state);
+	};
 	Polymer({
-	    is: is
+	    is: is,
+	    listeners: listeners,
+	    mapStateToThis: mapStateToThis
 	});
 
 /***/ }

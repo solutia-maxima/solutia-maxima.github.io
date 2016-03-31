@@ -3,7 +3,7 @@ import {Actions} from './actions.ts';
 
 export const rootReducer = (state=InitialState, action) => {
     switch(action.type) {
-        case Actions.changeTemp: {
+        case Actions.changeTemp.type: {
             let newState = Object.assign({}, state);
 
             newState.temp = action.newTemp;

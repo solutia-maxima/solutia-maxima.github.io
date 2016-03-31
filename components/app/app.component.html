@@ -1,13 +1,18 @@
 <!--<link rel="import" href="../../node_modules/@polymer/polymer/polymer.html">-->
 <link rel="import" href="../../lib/bower_components/polymer/polymer.html">
 
+<link rel="import" href="../../redux/redux.component.html">
+
 <link rel="import" href="../hero/hero.component.html">
 <link rel="import" href="../tabs/tabs.component.html">
 
 <dom-module id="sm-app">
     <template>
         <sm-hero></sm-hero>
-        <sm-tabs></sm-tabs>
+
+        <sm-redux-store>
+            <sm-tabs></sm-tabs>
+        </sm-redux-store>
     </template>
 
     <script src="../../dist/app.component.js"></script>
