@@ -49,6 +49,7 @@
 	var is = 'sm-tabs';
 	var ready = function ready() {
 	    this.selectedTab = 0;
+	    console.log(this.store);
 	};
 	Polymer({
 	    is: is,

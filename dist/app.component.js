@@ -47,8 +47,10 @@
 	'use strict';
 
 	var is = 'sm-app';
+	var ready = function ready() {};
 	Polymer({
-	    is: is
+	    is: is,
+	    ready: ready
 	});
 
 /***/ }
